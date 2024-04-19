@@ -5617,7 +5617,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 294920578}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 20.221, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -5634,8 +5634,8 @@ MonoBehaviour:
   target: {fileID: 294920578}
   angle: -70
   distance: 6
-  offset: {x: 0, y: 2, z: 0}
-  travelTime: 0
+  offset: {x: -5, y: 2, z: 0}
+  travelTime: 5
 --- !u!1 &1308445111 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6328325485107444608, guid: ad33f663ccb976944b5d6b42a39ac86a, type: 3}
@@ -6077,9 +6077,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4033575738913862, guid: 392d9512b2513d642804ffd2cd79c275, type: 3}
       insertIndex: -1
       addedObject: {fileID: 504371185}
-    - targetCorrespondingSourceObject: {fileID: 4033575738913862, guid: 392d9512b2513d642804ffd2cd79c275, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 963194228}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1798490320975608, guid: 392d9512b2513d642804ffd2cd79c275, type: 3}
       insertIndex: -1
@@ -6149,6 +6146,7 @@ SceneRoots:
   - {fileID: 1976191319}
   - {fileID: 486735436}
   - {fileID: 181215015}
+  - {fileID: 963194228}
   - {fileID: 1491642702}
   - {fileID: 928106482}
   - {fileID: 1811063885}

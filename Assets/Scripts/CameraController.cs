@@ -8,34 +8,34 @@ namespace Archer
     public class CameraController : MonoBehaviour
     {
 
-        // El objeto al que va a seguir la cámara
+        // El objeto al que va a seguir la cï¿½mara
         [SerializeField]
         private Transform target;
 
-        // Ángulo de la cámara
+        // ï¿½ngulo de la cï¿½mara
         [SerializeField]
         private float angle;
 
-        // Distancia a la que se coloca la cámara con respecto a la arquera
+        // Distancia a la que se coloca la cï¿½mara con respecto a la arquera
         [SerializeField]
         private float distance;
 
         // Desplazamiento con respecto al pivote de la arquera 
-        // (para que la cámara esté más orienta hacia la cabeza que a los pies)
+        // (para que la cï¿½mara estï¿½ mï¿½s orienta hacia la cabeza que a los pies)
         [SerializeField]
         private Vector3 offset;
         
-        // Velocidad a la que se mueve la cámara con Vector3.MoveTowards()
+        // Velocidad a la que se mueve la cï¿½mara con Vector3.MoveTowards()
         //[SerializeField]
         //private float travelSpeed;
 
-        // Tiempo que tarda la cámara en moverse a la nueva ubicación con Vector3.Lerp()
+        // Tiempo que tarda la cï¿½mara en moverse a la nueva ubicaciï¿½n con Vector3.Lerp()
         [SerializeField]
         private float travelTime;
 
         private void Update()
         {
-  
+            transform.position = Vector3.Lerp(transform.position, target.position + offset - Quaternion.Euler(0, angle, 0) * Vector3.forward * distance, travelTime);
         }
 
     }
