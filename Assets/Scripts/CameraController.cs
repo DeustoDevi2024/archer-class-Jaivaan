@@ -35,7 +35,9 @@ namespace Archer
 
         private void Update()
         {
-            transform.position = Vector3.Lerp(transform.position, target.position + offset - Quaternion.Euler(0, angle, 0) * Vector3.forward * distance, travelTime);
+           Vector3 desiredposition = target.transform.position + (Quaternion.Euler(0, angle, 0) * offset) - (target.forward * distance);
+           transform.position = Vector3.Lerp(transform.position, desiredposition, travelTime / Time.deltaTime);
+           transform.LookAt(target.position + offset);
         }
 
     }

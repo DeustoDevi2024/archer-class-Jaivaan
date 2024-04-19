@@ -9,7 +9,7 @@ namespace Archer
 
         // Exponer en una variable la velocidad de caminar
         private float walkSpeed;
-        // Exponer en una variable la velocidad de rotación
+        // Exponer en una variable la velocidad de rotaciï¿½n
         private float rotateSpeed;
 
         [SerializeField]
@@ -49,7 +49,7 @@ namespace Archer
             rotateSpeed = gameConfig.rotateSpeed;
         }
 
-        // Para mover con el Rigidbody, usamos la función FixedUpdate
+        // Para mover con el Rigidbody, usamos la funciï¿½n FixedUpdate
         private void FixedUpdate()
         {
             // Coger, con la clase Input, los ejes Horizontal y Vertical
