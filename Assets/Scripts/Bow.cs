@@ -10,7 +10,7 @@ namespace Archer
     public class Bow : MonoBehaviour
     {
 
-        // Referencia a la acción de Input para disparar
+        // Referencia a la acciï¿½n de Input para disparar
         [SerializeField]
         private InputActionReference fireInputReference;
 
@@ -22,7 +22,7 @@ namespace Archer
         [SerializeField]
         private float force;
         
-        // Una referencia a un transform que servirá de punto de referencia para disparar la flecha
+        // Una referencia a un transform que servirï¿½ de punto de referencia para disparar la flecha
         [SerializeField]
         private Transform handPosition;
 
@@ -33,7 +33,7 @@ namespace Archer
         private void Awake()
         {
            
-            // Nos subscribimos al evento de input de disparo (el espacio o el botón A).
+            // Nos subscribimos al evento de input de disparo (el espacio o el botï¿½n A).
             fireInputReference.action.performed += Action_performed;
 
             animator = GetComponent<Animator>();
@@ -53,16 +53,16 @@ namespace Archer
 
 
             // Instanciar una flecha
-           
+            GameObject arrow = Instantiate(arrowPrefab, handPosition.position, handPosition.rotation);
 
             // Colocar la flecha en el punto de referencia de la mano de la arquera
-         
+            arrow.transform.parent = handPosition;
 
             // Orientar la flecha hacia delante con respecto a la arquera
-           
+            arrow.transform.forward = transform.forward;
 
             // Aplicar una fuerza a la flecha para que salga disparada
-          
+            arrow.GetComponent<Rigidbody>().AddForce(handPosition.forward * force, ForceMode.Impulse);
         }
     }
 
